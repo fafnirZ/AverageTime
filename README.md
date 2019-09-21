@@ -19,3 +19,4 @@ By storing the execution data in a file, the script then calculates the average 
 
 
 ## Screen Shots ##
+![a screenshot of the program at work](Script_image.png)
