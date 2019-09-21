@@ -16,3 +16,6 @@ n is the number of times you run your algorithm against the same dataset i.e. th
 ## What this script does ##
 This bash script utilises the terminal/linux "time" command which outputs your program execution time
 By storing the execution data in a file, the script then calculates the average execution time after 'n' number of repetitions
+
+
+## Screen Shots ##
