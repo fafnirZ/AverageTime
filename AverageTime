@@ -1,0 +1,33 @@
+#!/bin/bash
+#Created by Jacky(fafnir Z)
+
+#generates the data files
+echo =====GENERATING DATA FILES====
+sh $3.sh > list
+
+echo ====TESTING $1 against $2====
+number=$4
+for ((i=1;i<=$4;i++))
+do
+	echo ==== test $i ====
+# { command ;} 2 >>
+# this appends stderr to a textfile
+# >> means append
+# 2 means stderr possibly
+# &> means both stderr and stdout goes into a file
+
+	{ time ./$1 < list > output1.$i ; } 2>> TIME_ALGO1.txt
+	{ time sh $2.sh < list > output2.$i ; } 2>> TIME_ALGO2.txt
+
+
+done	
+for x in TIME_ALGO1.txt TIME_ALGO2.txt
+do
+	./average $x < $x
+done
+
+rm list
+rm output1.*
+rm output2.*
+
+
